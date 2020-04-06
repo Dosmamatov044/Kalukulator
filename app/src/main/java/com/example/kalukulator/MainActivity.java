@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Double firstValues, secondValues, result_op;
     String operation;
 
-    private static final String FISRT = "FISRT";
+    private static final String FIRST = "FISRT";
     private static final String SECOND = "SECOND";
     private static final String OPERATION = "OPERATION";
 
@@ -23,41 +23,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result_field1);
         if (savedInstanceState != null) {
-            firstValues = savedInstanceState.getDouble(FISRT);
+            firstValues = savedInstanceState.getDouble(FIRST);
             secondValues = savedInstanceState.getDouble(SECOND);
             operation = savedInstanceState.getString(OPERATION);
         }
-        Log.d("scalc", "onCreate");
+        Log.d("my", "onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("scalc", "onStart");
+        Log.d("mykey", "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("scalc", "onResume");
+        Log.d("mykey", "onResume");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("scalc", "onStop");
+        Log.d("mykey", "onStop");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("scalc", "onRestart");
+        Log.d("mykey", "onRestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("scalc", "onDestroy");
+        Log.d("mykey", "onDestroy");
     }
 
     public void onNumberClick(View view) {
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         if (firstValues != null) {
-            outState.putDouble(FISRT, firstValues);
+            outState.putDouble(FIRST, firstValues);
         }
         if (secondValues != null) {
             outState.putDouble(SECOND, secondValues);
