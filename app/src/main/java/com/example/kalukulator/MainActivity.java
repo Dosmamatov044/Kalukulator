@@ -3,6 +3,7 @@ package com.example.kalukulator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String FIRST = "FISRT";
     private static final String SECOND = "SECOND";
     private static final String OPERATION = "OPERATION";
+
+
+   static  final String TEXT_KEY="text_key";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,9 +186,23 @@ public class MainActivity extends AppCompatActivity {
         }
         if (operation != null) {
             outState.putString(OPERATION, operation);
-        }
+        } }
+
+
+
+
+
+
+    public void Save(View view) {
+        String text =result.getText().toString();
+        Intent intent= new Intent();
+        intent.putExtra("resultat",text);
+        setResult(RESULT_OK, intent);
+        finish();
 
     }
+
+
 }
 
 
