@@ -17,16 +17,15 @@
         android:layout_marginTop="50dp"
         android:gravity="center"
         android:hint="Результат"
-        android:textColor="@color/colorDark"
-        android:textSize="30sp"
         android:background="@color/colortwo"
+        android:textSize="30sp"
         />
 
     <Button
         android:id="@+id/calculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="120dp"
         android:text="Calculator"
         android:textSize="30sp"
         app:layout_constraintLeft_toLeftOf="parent"

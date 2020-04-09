@@ -46,7 +46,7 @@ public class Main2Activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == 4 && resultCode == RESULT_OK) {
-            String result = data.getStringExtra("resultat");
+            String result = data.getStringExtra("Результат");
             res.setText(result);
         }
     }
@@ -60,4 +60,8 @@ public class Main2Activity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+
+
 }
+
+
