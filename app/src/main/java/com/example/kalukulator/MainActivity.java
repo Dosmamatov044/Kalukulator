@@ -2,6 +2,7 @@ package com.example.kalukulator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.Scanner;
+
 public class MainActivity extends AppCompatActivity {
+    MainAdapter adapter;
+   RecyclerView recyclerView;
+
     TextView result;
     Double firstValues, secondValues, result_op;
     String operation;
@@ -27,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         result = findViewById(R.id.result_field1);
-        if (savedInstanceState != null) {
-            firstValues = savedInstanceState.getDouble(FIRST);
-            secondValues = savedInstanceState.getDouble(SECOND);
-            operation = savedInstanceState.getString(OPERATION);
-        }
-        Log.d("mykey", "onCreate");
+
     }
+
+
+
+
+
 
     @Override
     protected void onStart() {
@@ -195,9 +201,17 @@ public class MainActivity extends AppCompatActivity {
         } }
 
 
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            firstValues = savedInstanceState.getDouble(FIRST);
+            secondValues = savedInstanceState.getDouble(SECOND);
+            operation = savedInstanceState.getString(OPERATION);}
 
 
-
+    }
 
     public void Save(View view) {
         String text =result.getText().toString();
@@ -206,11 +220,10 @@ public class MainActivity extends AppCompatActivity {
         setResult(RESULT_OK, intent);
         finish();
 
+
     }
 
 
+
+
 }
-
-
-
-
