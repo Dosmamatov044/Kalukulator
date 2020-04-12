@@ -47,6 +47,8 @@ public class Main2Activity extends AppCompatActivity {
 
         adapter = new MainAdapter();
         history = new ArrayList<>();
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
 
@@ -87,6 +89,7 @@ public class Main2Activity extends AppCompatActivity {
         startActivity(intent);
         }}
     }
+
 
 
 
